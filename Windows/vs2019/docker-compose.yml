@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    buildtools2019:
+        build:
+            context: .
+        image: buildtools2019:latest
+        container_name: vs2019
+        hostname: vs2019
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        #user: "NT AUTHORITY\\SYSTEM"
+        #isolation: process
+        #restart: always
+        ports:
+            - "10022:22"
+        volumes:
+            - C:\Temp\Docker:C:\Temp\Docker
+        #command: cmd.exe /c "dir /a C:\Docker"

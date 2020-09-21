@@ -1,0 +1,22 @@
+version: '3'
+services:
+    vbox_web:
+        container_name: vbox_web
+        build: .
+        #image: jazzdd/phpvirtualbox
+        restart: always
+        ports:
+            - "8080:80"
+        environment:
+            SRV1_HOSTPORT: "131.101.156.48:18083"
+            SRV1_NAME: "vbox-jenkins"
+            SRV1_USER: "vbox-user"
+            SRV1_PW: "vbox-user"
+            #SRV2_HOSTPORT: "192.168.1.2:18083"
+            #SRV2_NAME: "Server2"
+            #SRV2_USER: "user2"
+            #SRV2_PW: "test"
+            #SRV2_CONF_browserRestrictFolders: "/data,"
+            #SRV2_CONF_authMaster: "true"
+            CONF_browserRestrictFolders: "/data/vbox,"
+            CONF_noAuth: "true"

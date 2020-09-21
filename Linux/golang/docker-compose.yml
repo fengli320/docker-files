@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    golang:
+        build: .
+        container_name: golang
+        image: golang-env:1.14.7-buster
+        #restart: always
+        hostname: 'golang'
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        privileged: true
+        environment:
+            CONFIG_DIR: /data/repo/git/private-notebook/Linux
+        ports:
+            - "1022:22"
+        volumes:
+            - /data/repo:/data/repo
+        #command: /bin/sh -c "tmux -f $CONFIG_DIR/scripts/.tmux.conf new -As golang"

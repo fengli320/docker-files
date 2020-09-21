@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    sc1909:
+        build: .
+        #restart: always
+        ports:
+            - "10022:22"
+        volumes:
+            - C:\Temp\Docker:C:\Docker
+        command: cmd.exe /c "dir /a C:\\Docker"
