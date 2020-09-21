@@ -6,9 +6,11 @@ FROM mcr.microsoft.com/dotnet/framework/sdk:4.8-20200714-windowsservercore-ltsc2
 WORKDIR C:/TEMP
 
 # Install packages
+# Due to GitHub connection not stable from mainland
+COPY OMC\OpenSSH-Win64_790.zip OpenSSH-Win64.zip
 RUN `
     # Install OpenSSH Server
-    curl.exe -fSLo OpenSSH-Win64.zip https://github.com/PowerShell/Win32-OpenSSH/releases/download/v7.9.0.0p1-Beta/OpenSSH-Win64.zip; `
+    #curl.exe -fSLo OpenSSH-Win64.zip https://github.com/PowerShell/Win32-OpenSSH/releases/download/v7.9.0.0p1-Beta/OpenSSH-Win64.zip; `
     #Start-Process curl.exe -ArgumentList '-fSLo','OpenSSH-Win64.zip','https://github.com/PowerShell/Win32-OpenSSH/releases/download/v7.9.0.0p1-Beta/OpenSSH-Win64.zip' -Wait; `
     Expand-Archive OpenSSH-Win64.zip -DestinationPath C:\Windows\System32; `
     Remove-Item *.*; `
