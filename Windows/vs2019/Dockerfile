@@ -20,7 +20,7 @@ RUN C:\Windows\System32\OpenSSH-Win64\FixHostFilePermissions.ps1 -Confirm:$false
 
 # Set default SSH shell as Git Bash
 # The Bash path ' C:\TEMP\Docker\Tools\PortableGit-2.14.3-64-bit ' can be changed as needed
-RUN New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\TEMP\Docker\Tools\PortableGit-2.14.3-64-bit\bin\bash.exe" -PropertyType String -Force
+RUN New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\TEMP\Docker\Tools\PortableGit-2.28.0-64-bit\bin\bash.exe" -PropertyType String -Force
 
 COPY ssh\administrators_authorized_keys C:\Users\ContainerAdministrator\.ssh\authorized_keys
 COPY ssh\sshd_config_not_admin C:\ProgramData\ssh\sshd_config
