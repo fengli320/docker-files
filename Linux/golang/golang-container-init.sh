@@ -9,7 +9,7 @@ apt-get update
 
 #############################################################################
 # Install packages
-apt-get install -y vim-nox locales tmux bash-completion ctags patch man tree cifs-utils
+apt-get install -y vim-nox locales tmux bash-completion ctags patch man tree cifs-utils fzf ripgrep
 # Clean up the apt cache
 rm -rf /var/lib/apt/lists/*
 
