@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    golang:
+        image: golang:1.14.9-nanoserver-1809
+        container_name: golang
+        hostname: golang
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        volumes:
+            - C:\Temp\Docker:C:\Temp\Docker
