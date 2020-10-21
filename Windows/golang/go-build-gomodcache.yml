@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    build:
+        image: golang:1.15.2-nanoserver-1809
+        container_name: golang-build
+        hostname: golang-build
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        working_dir: C:\gopath\src
+        environment:
+            - GOPROXY=${GOPROXY:-https://goproxy.cn,https://proxy.golang.org,direct}
+            - GOMODCACHE=C:\gopath\pkg.mod
+            - GOCACHE=C:\gopath\pkg.build
+        volumes:
+            - ${VOL}:C:\gopath\src
+            - ${GOMODCACHE}:C:\gopath\pkg.mod
+            - ${GOCACHE}:C:\gopath\pkg.build
