@@ -7,7 +7,7 @@ services:
         hostname: golang-build-32
         working_dir: C:\gopath\src
         environment:
-            - GOPROXY=${GOPROXY:-https://goproxy.cn}
+            - GOPROXY=https://goproxy.cn
             - GO111MODULE=${GO111MODULE:-on}
             - GOCACHE=C:\gopath\pkg.build
         env_file:
