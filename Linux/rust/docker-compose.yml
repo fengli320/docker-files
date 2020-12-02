@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    rust:
+        build: .
+        container_name: rust
+        image: rust-env:1.47.0-buster
+        #restart: always
+        hostname: 'rust'
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        privileged: true
+        environment:
+            CONFIG_DIR: /data/repo/git/private-notebook/Linux
+        volumes:
+            - /data/repo:/data/repo
