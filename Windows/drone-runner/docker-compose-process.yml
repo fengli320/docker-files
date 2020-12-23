@@ -3,6 +3,7 @@ version: '3.7'
 services:
     drone-runner:
         image: drone/drone-runner-docker:1.5.2-windows-1809-amd64
+        isolation: process
         container_name: drone-runner
         hostname: drone-runner
         environment:
