@@ -1,0 +1,19 @@
+# Docker Desktop Community 2.2.0.0 and above is required
+version: '3.5'
+
+services:
+    build:
+        image: golang:1.11.13-nanoserver-1809
+        isolation: process
+        container_name: golang-build-32
+        hostname: golang-build-32
+        working_dir: C:\gopath\src
+        environment:
+            - GOPROXY=https://goproxy.cn
+            - GO111MODULE=${GO111MODULE:-on}
+            - GOCACHE=C:\gopath\pkg.build
+        env_file:
+            - go-build-32.env
+        volumes:
+            - ${VOL}:C:\gopath\src
+            - ${GOCACHE}:C:\gopath\pkg.build
