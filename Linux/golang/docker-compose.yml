@@ -16,10 +16,4 @@ services:
             - "1022:22"
         volumes:
             - /data/repo:/data/repo
-
-        # For docker in docker
-            - /var/run/docker.sock:/var/run/docker.sock
-            - /usr/bin/docker:/usr/bin/docker
-            - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
-
         #command: /bin/sh -c "tmux -f $CONFIG_DIR/scripts/.tmux.conf new -As golang"
