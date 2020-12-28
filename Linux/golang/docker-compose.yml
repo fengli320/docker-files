@@ -4,7 +4,7 @@ services:
     golang:
         build: .
         container_name: golang
-        image: golang-env:1.14.7-buster
+        image: golang-env:1.15.6-buster
         #restart: always
         hostname: 'golang'
         stdin_open: true # docker run -i
