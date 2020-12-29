@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+    drone-runner:
+        image: drone/drone-runner-docker:1.6.2-linux-amd64
+        container_name: drone-runner
+        hostname: drone-runner
+        environment:
+            - DRONE_RPC_PROTO=http
+            - DRONE_RPC_HOST=131.101.156.37
+            - DRONE_RPC_SECRET=854604360f45106d11f51363a2797eaeda6a3411aa60a3c79a56cc658e78ae5a
+            - DRONE_RUNNER_CAPACITY=2
+            - DRONE_RUNNER_NAME=${HOSTNAME}
+        restart: always
+        #ports:
+        #    - "3000:3000"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
