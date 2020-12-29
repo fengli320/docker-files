@@ -5,11 +5,10 @@
 # Debian source:
 sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
 sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
-apt-get update
 
 #############################################################################
 # Install packages
-apt-get install -y vim-nox locales tmux bash-completion ctags patch man tree cifs-utils fzf ripgrep tofrodos upx
+apt-get update && apt-get install -y vim-nox locales tmux bash-completion ctags patch man tree cifs-utils fzf ripgrep tofrodos upx libltdl7
 # Clean up the apt cache
 rm -rf /var/lib/apt/lists/*
 
