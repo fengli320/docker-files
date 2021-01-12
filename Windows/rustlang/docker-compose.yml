@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    rustlang:
+        build:
+            context: .
+            args:
+                RUSTUP_DIST_SERVER: https://mirrors.ustc.edu.cn/rust-static
+                RUSTUP_UPDATE_ROOT: https://mirrors.ustc.edu.cn/rust-static/rustup
+        image: rust-dev:latest
+        container_name: rust
+        hostname: rust
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        #user: "NT AUTHORITY\\SYSTEM"
+        volumes:
+            - C:\Temp\Docker:C:\Temp\Docker
